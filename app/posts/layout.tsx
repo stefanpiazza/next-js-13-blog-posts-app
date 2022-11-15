@@ -45,7 +45,7 @@ export default async function PostsLayout({
               }) => (
                 <li key={`posts-${id}`} className="snap-center">
                   <Outer path="posts/" id={id}>
-                    <Link href={`posts/${id}`} className="block rounded-lg">
+                    <Link href={`/posts/${id}`} className="block rounded-lg">
                       <Shadow>
                         <Border>
                           <LayoutLandscape>

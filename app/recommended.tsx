@@ -36,7 +36,7 @@ export default async function Recommended() {
           <>
             <li key={`recommended-${id}`}>
               <Outer>
-                <Link href={`posts/${id}`} className="block rounded-lg">
+                <Link href={`/posts/${id}`} className="block rounded-lg">
                   <Shadow>
                     <Border>
                       <LayoutPortrait>
