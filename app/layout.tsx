@@ -1,7 +1,15 @@
-import Link from "next/link";
+import localFont from "@next/font/local";
 import SeparatorVertical from "components/card/separator-vertical";
+import Link from "next/link";
 
 import "./globals.css";
+
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default async function RootLayout({
   children,
@@ -13,7 +21,7 @@ export default async function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
+      <body className={`${inter.variable} font-sans`}>
         <div className="absolute grid h-full w-full grid-rows-[auto_1fr_auto] overflow-hidden">
           <header>
             <nav>
