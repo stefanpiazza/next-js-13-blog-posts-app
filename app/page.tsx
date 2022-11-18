@@ -38,7 +38,11 @@ export default async function RootPage() {
           {posts.map(({ id, title, body }) => (
             <li key={`posts-${id}`}>
               <Outer>
-                <Link href={`/posts/${id}`} className="block rounded-lg">
+                <Link
+                  prefetch={false}
+                  href={`/posts/${id}`}
+                  className="block rounded-lg"
+                >
                   <Shadow>
                     <Border>
                       <LayoutPortrait>

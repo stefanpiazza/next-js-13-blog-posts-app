@@ -27,6 +27,7 @@ export default async function RootLayout({
               <ul className="flex border-b border-slate-200 p-4">
                 <li>
                   <Link
+                    prefetch={false}
                     href="/"
                     className="flex rounded-lg bg-slate-900 px-4 py-2 font-semibold uppercase text-white"
                   >
@@ -35,6 +36,7 @@ export default async function RootLayout({
                 </li>
                 <li className="ml-auto">
                   <Link
+                    prefetch={false}
                     href="/"
                     className="flex rounded-lg px-4 py-2 text-slate-900"
                   >
@@ -46,6 +48,7 @@ export default async function RootLayout({
                 </li>
                 <li>
                   <Link
+                    prefetch={false}
                     href="/posts"
                     className="flex rounded-lg px-4 py-2 text-slate-900"
                   >
@@ -61,6 +64,7 @@ export default async function RootLayout({
               <ul className="flex gap-2 border-t border-slate-200 p-2">
                 <li>
                   <Link
+                    prefetch={false}
                     href="/"
                     className="flex rounded-lg px-2 py-1 text-sm text-slate-900"
                   >
