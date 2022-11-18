@@ -8,24 +8,21 @@ import Title from "components/card/title";
 import Link from "next/link";
 import delay from "../utils/delay";
 
-async function fetchPosts() {
-  const res1 = fetch("https://dummyjson.com/posts/5");
-  const res2 = fetch("https://dummyjson.com/posts/6");
-  const res3 = fetch("https://dummyjson.com/posts/7");
-  const res4 = fetch("https://dummyjson.com/posts/8");
+async function fetchPost(id: number) {
+  const res = await fetch(`https://dummyjson.com/posts/${id}`, {
+    cache: "no-store",
+  });
 
-  const allRes = await Promise.all([
-    res1.then((res) => res.json()),
-    res2.then((res) => res.json()),
-    res3.then((res) => res.json()),
-    res4.then((res) => res.json()),
-  ]);
-
-  return allRes;
+  return res.json();
 }
 
 export default async function Recommended() {
-  const posts = await fetchPosts();
+  const posts = await Promise.all([
+    fetchPost(1),
+    fetchPost(2),
+    fetchPost(3),
+    fetchPost(4),
+  ]);
 
   await delay(3000);
 
@@ -54,7 +51,7 @@ export default async function Recommended() {
                               </div>
                             ) : null}
                             {body ? (
-                              <div className="line-clamp-3">
+                              <div className="line-clamp-2">
                                 <Description>{body}</Description>
                               </div>
                             ) : null}

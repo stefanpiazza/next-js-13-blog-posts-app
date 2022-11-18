@@ -15,7 +15,7 @@ export default function RecommendedSkeleton() {
                   <Border>
                     <div className="flex flex-col gap-2">
                       <div className="h-7 overflow-hidden rounded-lg bg-slate-200" />
-                      <div className="h-24 overflow-hidden rounded-lg bg-slate-200" />
+                      <div className="h-12 overflow-hidden rounded-lg bg-slate-200" />
                     </div>
                   </Border>
                 </LayoutPortrait>

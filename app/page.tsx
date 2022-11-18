@@ -10,24 +10,21 @@ import { Suspense } from "react";
 import Recommended from "./recommended";
 import RecommendedSkeleton from "./recommended-skeleton";
 
-async function fetchPosts() {
-  const res1 = fetch("https://dummyjson.com/posts/1");
-  const res2 = fetch("https://dummyjson.com/posts/2");
-  const res3 = fetch("https://dummyjson.com/posts/3");
-  const res4 = fetch("https://dummyjson.com/posts/4");
+async function fetchPost(id: number) {
+  const res = await fetch(`https://dummyjson.com/posts/${id}`, {
+    cache: "no-store",
+  });
 
-  const allRes = await Promise.all([
-    res1.then((res) => res.json()),
-    res2.then((res) => res.json()),
-    res3.then((res) => res.json()),
-    res4.then((res) => res.json()),
-  ]);
-
-  return allRes;
+  return res.json();
 }
 
 export default async function RootPage() {
-  const posts = await fetchPosts();
+  const posts = await Promise.all([
+    fetchPost(1),
+    fetchPost(2),
+    fetchPost(3),
+    fetchPost(4),
+  ]);
 
   return (
     <div className="absolute h-full w-full overflow-y-auto">
@@ -59,7 +56,7 @@ export default async function RootPage() {
                               </div>
                             ) : null}
                             {body ? (
-                              <div className="line-clamp-3">
+                              <div className="line-clamp-2">
                                 <Description>{body}</Description>
                               </div>
                             ) : null}
