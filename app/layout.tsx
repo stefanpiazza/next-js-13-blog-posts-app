@@ -1,4 +1,3 @@
-import localFont from "@next/font/local";
 import SeparatorVertical from "components/card/separator-vertical";
 import Link from "next/link";
 
