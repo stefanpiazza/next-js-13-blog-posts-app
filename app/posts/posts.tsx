@@ -28,11 +28,7 @@ export default async function Posts() {
         ({ id, title, body }: { id: number; title: string; body: string }) => (
           <li key={`posts-${id}`} className="snap-center">
             <Outer path="posts/" id={id}>
-              <Link
-                prefetch={false}
-                href={`/posts/${id}`}
-                className="block rounded-lg"
-              >
+              <Link href={`/posts/${id}`} className="block rounded-lg">
                 <Shadow>
                   <Border>
                     <LayoutLandscape>
